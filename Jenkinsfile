@@ -43,7 +43,7 @@ pipeline{
         stage('在k8s master执行kubectl apply '){
             steps{
                 sh '''ssh root@192.168.164.60 kubectl apply -f /usr/local/k8s/pipeline.yml
-                        ssh root@192.168.164.60 kubectl rollout restart deploy pipeline -n test'''
+                        ssh root@192.168.164.60 kubectl rollout restart deploy prometheus-demo -n test'''
             }
         }
     }
