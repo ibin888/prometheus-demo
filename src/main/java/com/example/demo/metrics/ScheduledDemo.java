@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-public class girScheduledDemo {
+public class ScheduledDemo {
 
 
     private Integer count1 = 0;
