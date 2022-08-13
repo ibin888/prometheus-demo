@@ -3,6 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
+		<!--监控系统健康情况的工具-->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.6.RELEASE</version>
@@ -39,10 +40,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
+		<!--监控系统健康情况的工具-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>2.1.6.RELEASE</version>
 		</dependency>
 
         <!--web模块-->
@@ -57,6 +59,12 @@
 			<artifactId>micrometer-registry-prometheus</artifactId>
 			<version>1.2.0</version>
 		</dependency>
+		<!--micrometer核心包，按需引入，使用Meter注解或手动埋点时需要-->
+<!--		<dependency>-->
+<!--			<groupId>io.micrometer</groupId>-->
+<!--			<artifactId>micrometer-core</artifactId>-->
+<!--			<version>1.2.0</version>-->
+<!--		</dependency>-->
 
 		<!--micrometer获取jvm相关信息，用于展示在Grafana上-->
 		<dependency>
@@ -112,6 +120,17 @@
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
 		</repository>
+		<repository>
+			<id>alimaven</id>
+			<name>Maven Aliyun Mirror</name>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -128,5 +147,7 @@
 			<url>https://repo.spring.io/milestone</url>
 		</pluginRepository>
 	</pluginRepositories>
+
+
 
 </project>
